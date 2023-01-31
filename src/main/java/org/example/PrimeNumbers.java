@@ -23,5 +23,14 @@ public class PrimeNumbers {
         return numbers;
     }
 
-
+    public static List<Integer> getFinobacciNumbers(int end){
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(0);
+        numbers.add(1);
+        for (int i = 0; i <= end; i++) {
+            int number = numbers.get(i) + numbers.get(i+1);
+            numbers.add(number);
+        }
+        return numbers;
+    }
 }
