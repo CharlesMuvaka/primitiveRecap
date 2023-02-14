@@ -18,3 +18,8 @@
         2. Undirected graphs - No direction between nodes
         3. Connected and disconnected graphs - There is a relationship between one node and another in a connected graph
                                 while there isn't in a disconnected graph.
+
+- An adjacency matrix and an adjacency list are used to represent data in a graph.
+
+            Adjacency Matrix
+- Uses a multidimensional array to represent the data.
