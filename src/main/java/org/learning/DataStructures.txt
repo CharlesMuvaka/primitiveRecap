@@ -1,0 +1,20 @@
+                            Data Structures.
+- They represent a way to store and organise data.
+- There are two types.
+        1. Linear Data structures - Data is organised sequentially.
+        2. Non-linear data structures
+
+        Non-Linear data structures
+- Data is not organised sequentially.
+- Nodes and edges are used to represent the data and the relationship between the data respectively.
+- There are two types
+            1. Trees
+            2. Graphs
+
+            Graphs
+- A collection of nodes and edges.
+- There are many types of graphs.
+        1. Directed graphs - Contains arrows showing direction from one node to the other
+        2. Undirected graphs - No direction between nodes
+        3. Connected and disconnected graphs - There is a relationship between one node and another in a connected graph
+                                while there isn't in a disconnected graph.
