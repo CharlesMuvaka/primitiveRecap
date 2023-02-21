@@ -59,9 +59,14 @@ public class LocateTitan {
     public static void main(String[] args) {
         try{
             File locateTitan = new File("locatetitan.in");
-            if (locateTitan.exists()){
+
+           // test files to test the integrity of the code.
+            File locateTitan1 = new File("locatetitan1.in");
+            File locateTitan2 = new File("locatetitan2.in");
+            File locateTitan3 = new File("locatetitan3.in");
+            if (locateTitan1.exists()){
                 // creating a file reader to read the bytes of the file
-                FileReader reader = new FileReader(locateTitan);
+                FileReader reader = new FileReader(locateTitan1);
                 // using a buffered reader to get the actual content
                 BufferedReader bufferedReader = new BufferedReader(reader);
 
@@ -78,7 +83,7 @@ public class LocateTitan {
                 // initialising a queue to store the vertices travel cost
                 Queue<Integer> travelCost = new LinkedList<>();
                 for (int i = 0; i < vertices; i++) {
-                    String vertexWeight[] = bufferedReader.readLine().split(" ");
+                    String vertexWeight[] = bufferedReader.readLine().split("\\s");
                     for (int j = 0; j < vertexWeight.length; j++) {
                         travelCost.add(Integer.parseInt(vertexWeight[j]));
                     }
@@ -96,6 +101,9 @@ public class LocateTitan {
 
             }else{
                 locateTitan.createNewFile();
+                locateTitan1.createNewFile();
+                locateTitan2.createNewFile();
+                locateTitan3.createNewFile();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
