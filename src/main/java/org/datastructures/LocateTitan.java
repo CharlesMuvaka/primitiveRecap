@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 
 /**
  *
@@ -66,13 +68,27 @@ public class LocateTitan {
                 //getting the number of vertices
                 int vertices = Integer.parseInt(bufferedReader.readLine());
 
-                //defining a map to store the weight of each vertex
+                //defining a map to store the cost of each vertex
                 Map<Integer, Double> costMap = new HashMap<>();
 
                 for (int i = 0; i < vertices; i++) {
                     String[] vertexAndCost = bufferedReader.readLine().split(" ");
                     costMap.put(Integer.parseInt(vertexAndCost[0]), Double.parseDouble(vertexAndCost[1]));
-                    System.out.println(costMap.get(i));
+                }
+                // initialising a queue to store the vertices travel cost
+                Queue<Integer> travelCost = new LinkedList<>();
+                for (int i = 0; i < vertices; i++) {
+                    String vertexWeight[] = bufferedReader.readLine().split(" ");
+                    for (int j = 0; j < vertexWeight.length; j++) {
+                        travelCost.add(Integer.parseInt(vertexWeight[j]));
+                    }
+                }
+                // initializing a matrix to store the data
+                for (int i = 0; i < vertices; i++) {
+                    for (int j = 0; j < vertices; j++) {
+
+                    }
+
                 }
 
             }else{
