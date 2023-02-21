@@ -92,7 +92,7 @@ public class LocateTitan {
                 AdjacencyMatrix graph = new AdjacencyMatrix(vertices);
                 for (int i = 0; i < vertices; i++) {
                     for (int j = 0; j < vertices; j++) {
-                        graph.addNeighbor(i, j, travelCost.remove());
+                        graph.addWeight(i, j, travelCost.remove());
                         System.out.print(graph.matrix[i][j] + " ");
                     }
                     System.out.println(" ");
