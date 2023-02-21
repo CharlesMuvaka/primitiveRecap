@@ -1,8 +1,7 @@
 package org.datastructures;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Test5 {
     public static void main(String[] args)  {
@@ -22,21 +21,26 @@ public class Test5 {
                 String firstRow;
                 String edges = "";
 
+                // A queue obeys FIFO architecture - First in first out
+                Queue<Character> listEdges = new LinkedList<>();
+
                 // getting the remaining contents of the file.
-                while ((firstRow =  bufferedReader.readLine() )!= null){
+                for (int i = 0; i < rows; i++) {
+                    firstRow = bufferedReader.readLine();
                     edges += firstRow;
                 }
                 String matrixEdges = edges.replaceAll(" ", "");
-                List<Character> allChars = new ArrayList<>();
 
+                for (int i = 0; i < matrixEdges.length(); i++) {
+                    listEdges.add(matrixEdges.charAt(i));
+                }
                 //creating a matrix using the files details
                 int[][] matrix = new int[rows][columns];
 
                 for (int i = 0; i < matrix.length; i++) {
                     for (int j = 0; j < matrix[i].length; j++) {
-                        allChars.add(matrixEdges.charAt(j));
-                        matrix[i][j] = Character.getNumericValue(allChars.get(i));
-                        allChars.remove(matrix[i][j]);
+                        // using the remove method to retrieve and remove vertices weight
+                        matrix[i][j] = Character.getNumericValue(listEdges.remove());
                     }
                 }
 
