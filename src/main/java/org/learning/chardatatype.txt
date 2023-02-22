@@ -27,7 +27,7 @@
         Note: it doesn't take into consideration whether its negative or positive. It always returns a positive value
         Example:
             Char number = '1';
-            if(number.isDigit()){
+            if(Character.isDigit(number)){
                 System.out.println("The given character is a numeric value");
             }else{
                 System.out.println("The given character is not numeric value");
@@ -36,7 +36,7 @@
         - This method checks whether the given character is an alphabetic letter
         Example:
             Char letter = 'B';
-            if(letter.isLetter()){
+            if(Character.isLetter(letter)){
                 System.out.println("The given character is an alphabetic value");
             }else{
                 System.out.println("The given character is not an alphabetic");
@@ -48,7 +48,7 @@
             is applied to them
             Example:
                 char newLine = '\n'
-                if(newLine.isWhiteSpace()){
+                if(Character.isWhiteSpace(newLine)){
                    System.out.println("The given character is an empty space");
                 }else{
                     System.out.println("The given character is not an empty space");
