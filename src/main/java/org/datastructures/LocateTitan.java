@@ -66,7 +66,7 @@ public class LocateTitan {
             File locateTitan3 = new File("locatetitan3.in");
             if (locateTitan1.exists()){
                 // creating a file reader to read the bytes of the file
-                FileReader reader = new FileReader(locateTitan1);
+                FileReader reader = new FileReader(locateTitan2);
                 // using a buffered reader to get the actual content
                 BufferedReader bufferedReader = new BufferedReader(reader);
 
@@ -77,15 +77,18 @@ public class LocateTitan {
                 Map<Integer, Double> costMap = new HashMap<>();
 
                 for (int i = 0; i < vertices; i++) {
-                    String[] vertexAndCost = bufferedReader.readLine().split(" ");
+                    String[] vertexAndCost = bufferedReader.readLine().split("\\s");
                     costMap.put(Integer.parseInt(vertexAndCost[0]), Double.parseDouble(vertexAndCost[1]));
                 }
                 // initialising a queue to store the vertices travel cost
                 Queue<Integer> travelCost = new LinkedList<>();
                 for (int i = 0; i < vertices; i++) {
-                    String vertexWeight[] = bufferedReader.readLine().split("\\s");
-                    for (int j = 0; j < vertexWeight.length; j++) {
-                        travelCost.add(Integer.parseInt(vertexWeight[j]));
+                    String vertexWeight = bufferedReader.readLine();
+                    for (int j = 0; j < vertexWeight.length(); j++) {
+                        // checking whether the current char is a white space.
+                        if (!Character.isWhitespace(vertexWeight.charAt(j))){
+                            travelCost.add(Character.getNumericValue(vertexWeight.charAt(j)));
+                        }
                     }
                 }
                 // initializing a matrix to store the data
