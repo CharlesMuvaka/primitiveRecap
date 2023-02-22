@@ -94,24 +94,18 @@ public class LocateTitan {
                 // initializing a matrix to store the data
                 AdjacencyMatrix graph = new AdjacencyMatrix(vertices);
                 for (int i = 0; i < vertices; i++) {
-                    for (int j = 0; j < vertices; j++) {
-                        graph.addWeight(i, j, travelCost.remove());
-                    }
-                }
-
-                //updating the adjacency matrix edge weight based on the weight cost of the vertex
-                for (int i = 0; i < vertices; i++) {
                     Double cost1 = costMap.get(i);
                     for (int j = 0; j < vertices; j++) {
+                        graph.addWeight(i, j, travelCost.remove());
                         Double cost2 = costMap.get(j);
-//                        double totalCost = (cost1 * cost2);
-//                        double newWeight = graph.matrix[i][j]/(cost1 * cost2);
+                        //updating the adjacency matrix edge weight based on the weight cost of the vertex
                         graph.matrix[i][j] = (int) (graph.matrix[i][j] /(cost1 * cost2));
                         System.out.print(graph.matrix[i][j] + " ");
                     }
                     System.out.println(" ");
-
                 }
+
+
 
             }else{
                 locateTitan.createNewFile();
