@@ -66,7 +66,7 @@ public class LocateTitan {
             File locateTitan3 = new File("locatetitan3.in");
             if (locateTitan1.exists()){
                 // creating a file reader to read the bytes of the file
-                FileReader reader = new FileReader(locateTitan2);
+                FileReader reader = new FileReader(locateTitan3);
                 // using a buffered reader to get the actual content
                 BufferedReader bufferedReader = new BufferedReader(reader);
 
@@ -96,6 +96,17 @@ public class LocateTitan {
                 for (int i = 0; i < vertices; i++) {
                     for (int j = 0; j < vertices; j++) {
                         graph.addWeight(i, j, travelCost.remove());
+                    }
+                }
+
+                //updating the adjacency matrix edge weight based on the weight cost of the vertex
+                for (int i = 0; i < vertices; i++) {
+                    Double cost1 = costMap.get(i);
+                    for (int j = 0; j < vertices; j++) {
+                        Double cost2 = costMap.get(j);
+//                        double totalCost = (cost1 * cost2);
+//                        double newWeight = graph.matrix[i][j]/(cost1 * cost2);
+                        graph.matrix[i][j] = (int) (graph.matrix[i][j] /(cost1 * cost2));
                         System.out.print(graph.matrix[i][j] + " ");
                     }
                     System.out.println(" ");
