@@ -1,0 +1,62 @@
+                            Char
+- One of javas primitive data types.
+- Methods are not applied to primitive data types.
+- Contains a Character wrapper class that methods ca be performed on.
+    NOTE: Most escape sequence declarations are considered as characters.
+        - They include:
+                1. \ (backslash) - used to display values that have meaning to the compiler.
+                2. \n (new line) - initializes the beginning of a new line.
+                3. \t (new tab) - initializes a space the size of a tab
+
+                        Conversion
+- Java uses unicode characters to represent characters.
+- Type casting a character into an int would give you the integer value based on the unicode character set.
+- We should use a method defined in its wrapper class to get its actual value.
+    Example:
+        char number = '1'; - Type casting this directly would give you 49.
+        int numberFromChar = (int) number; ans = 49
+
+        - Due to this java provides a method the below method to get its actual value
+
+        int numberFromChar = Character.getNumericValue(number);
+
+                Common Methods associated with the Char datatype
+
+    1. isDigit()
+        - This method checks whether the referred character is an number.
+        Note: it doesn't take into consideration whether its negative or positive. It always returns a positive value
+        Example:
+            Char number = '1';
+            if(number.isDigit()){
+                System.out.println("The given character is a numeric value");
+            }else{
+                System.out.println("The given character is not numeric value");
+              }
+     2. isLetter()
+        - This method checks whether the given character is an alphabetic letter
+        Example:
+            Char letter = 'B';
+            if(letter.isLetter()){
+                System.out.println("The given character is an alphabetic value");
+            }else{
+                System.out.println("The given character is not an alphabetic");
+            }
+
+     3. isWhiteSpace()
+        - Checks to see if the defined character is a white space.
+        - Java considers tabs and new lines as white spaces thus \t an \n would return true if this method
+            is applied to them
+            Example:
+                char newLine = '\n'
+                if(newLine.isWhiteSpace()){
+                   System.out.println("The given character is an empty space");
+                }else{
+                    System.out.println("The given character is not an empty space");
+                }
+
+     4. isLowerCase() and isUpperCase()
+        - Checks to see whether the character is in small letters or capital letters respectively.
+     5. toLowerCase() and toUpperCase()
+        - Converts the character to small character and capital character respectively.
+     6. toString()
+        - Converts a character into a string.
