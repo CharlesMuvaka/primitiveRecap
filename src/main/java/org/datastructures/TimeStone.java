@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 
 /**
  * Given a starting event and an Adjacency Matrix representing a graph of all possible
@@ -74,10 +76,18 @@ public class TimeStone {
                     String[] eventAndEu = bufferedReader.readLine().split(" ");
                     eventsAndEu.put(Integer.parseInt(eventAndEu[0]), Integer.parseInt(eventAndEu[1]));
                 }
-
+                //Creating a queue to store the graph edges
+                Queue<Integer> graphEdges = new LinkedList<>();
                 for (int i = 0; i < events; i++) {
-                    System.out.println(eventsAndEu.get(i));
+                    String matrixEdges = bufferedReader.readLine();
+                    for (int j = 0; j < matrixEdges.length(); j++) {
+                        if (Character.isDigit(matrixEdges.charAt(j))){
+                            graphEdges.add(Character.getNumericValue(matrixEdges.charAt(j)));
+                        }
+                    }
                 }
+
+
 
 
             }else{
