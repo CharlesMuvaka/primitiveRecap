@@ -87,14 +87,25 @@ public class TimeStone {
                     }
                 }
 
+                //Create a variable to store the total threshold of the graph
+                int totalThreshold = 0;
+
                 for (int i = 0; i < events; i++) {
+                    int currentThreshold = eventsAndEu.get(i);
                     for (int j = 0; j < events; j++) {
                         matrix.matrix[i][j] = graphEdges.remove();
+                        if (matrix.matrix[i][j] == 1){
+                            int neighborThreshold = eventsAndEu.get(j);
+                            totalThreshold += (currentThreshold + neighborThreshold);
+                            System.out.println(totalThreshold);
+                        }
+                        System.out.println(" ");
                         System.out.print(matrix.matrix[i][j]);
                     }
                     System.out.println(" ");
 
                 }
+
 
 
             }else{
