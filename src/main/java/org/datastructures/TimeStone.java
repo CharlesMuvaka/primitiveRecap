@@ -62,6 +62,9 @@ public class TimeStone {
                 //Reading the expected EU threshold of a vertex
                 int expectedEU = Integer.parseInt(bufferedReader.readLine());
 
+                //Reading the number of events in the graph
+                int events = Integer.parseInt(bufferedReader.readLine());
+
 
 
 
