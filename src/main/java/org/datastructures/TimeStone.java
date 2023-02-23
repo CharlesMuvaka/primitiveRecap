@@ -65,7 +65,19 @@ public class TimeStone {
                 //Reading the number of events in the graph
                 int events = Integer.parseInt(bufferedReader.readLine());
 
+                //Creating a map to store events with their expected EUs
+                Map<Integer, Integer> eventsAndEu = new HashMap<>();
+                AdjacencyMatrix matrix = new AdjacencyMatrix(events);
 
+                //Reading event and its expected EU value.
+                for (int i = 0; i < events; i++) {
+                    String[] eventAndEu = bufferedReader.readLine().split(" ");
+                    eventsAndEu.put(Integer.parseInt(eventAndEu[0]), Integer.parseInt(eventAndEu[1]));
+                }
+
+                for (int i = 0; i < events; i++) {
+                    System.out.println(eventsAndEu.get(i));
+                }
 
 
             }else{
