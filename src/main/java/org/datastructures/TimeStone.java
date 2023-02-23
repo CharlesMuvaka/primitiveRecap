@@ -87,7 +87,14 @@ public class TimeStone {
                     }
                 }
 
+                for (int i = 0; i < events; i++) {
+                    for (int j = 0; j < events; j++) {
+                        matrix.matrix[i][j] = graphEdges.remove();
+                        System.out.print(matrix.matrix[i][j]);
+                    }
+                    System.out.println(" ");
 
+                }
 
 
             }else{
