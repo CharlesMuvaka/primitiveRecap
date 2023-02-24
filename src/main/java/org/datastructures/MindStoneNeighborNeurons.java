@@ -49,7 +49,7 @@ public class MindStoneNeighborNeurons {
             File inputFile3 = new File("mindstoneneighborneurons3.in");
 
             if (inputFile.exists()){
-                FileReader reader = new FileReader(inputFile3);
+                FileReader reader = new FileReader(inputFile1);
                 BufferedReader bufferedReader = new BufferedReader(reader);
 
                 //reading the number of neurons from the input file
@@ -67,6 +67,22 @@ public class MindStoneNeighborNeurons {
                 //reading the number of graph edges from the file.
                 int graphEdges = Integer.parseInt(bufferedReader.readLine());
 
+                //reading the neuron neighbors from the file.
+                for (int i = 0; i < graphEdges; i++) {
+                    String[] neuronAndNeighbor = bufferedReader.readLine().split(" ");
+                    for (int j = 0; j < neurons; j++) {
+                        if (allNeurons[j].name.equals(neuronAndNeighbor[0])){
+                            allNeurons[j].addNeighbor(new Neuron(neuronAndNeighbor[1]));
+                        }
+                    }
+                }
+
+                for (int i = 0; i < neurons; i++) {
+                    for (int j = 0; j < allNeurons[i].neighbors.size(); j++) {
+                        System.out.print(allNeurons[i].name + ": "+ allNeurons[i].neighbors.get(j).name );
+                    }
+                    System.out.println(" ");
+                }
 
             }else{
                 inputFile.createNewFile();
