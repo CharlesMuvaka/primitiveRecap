@@ -64,6 +64,9 @@ public class MindStoneNeighborNeurons {
                     allNeurons[i] = neuron;
                 }
 
+                //reading the number of graph edges from the file.
+                int graphEdges = Integer.parseInt(bufferedReader.readLine());
+
 
             }else{
                 inputFile.createNewFile();
