@@ -79,11 +79,14 @@ public class MindStoneNeighborNeurons {
 
                 //getting the mind stone vertex
                 Neuron mindStoneVertex = allNeurons[allNeurons.length - 1];
+
+                //getting mind stone vertex neighbors
                 for (int i = 0; i < neurons; i++) {
                     for (int j = 0; j < allNeurons[i].neighbors.size(); j++) {
-//                        System.out.print(allNeurons[i].name + ": "+ allNeurons[i].neighbors.get(j).name );
+                        if (allNeurons[i].neighbors.get(j).name.equals(mindStoneVertex.name)){
+                            System.out.println(allNeurons[i].name);
+                        }
                     }
-//                    System.out.println(" ");
                 }
 
             }else{
