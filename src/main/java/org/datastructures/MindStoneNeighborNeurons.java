@@ -1,6 +1,8 @@
 package org.datastructures;
 
 
+import org.datastructures.models.Neuron;
+
 import javax.annotation.processing.FilerException;
 import java.io.BufferedReader;
 import java.io.File;
@@ -47,11 +49,21 @@ public class MindStoneNeighborNeurons {
             File inputFile3 = new File("mindstoneneighborneurons3.in");
 
             if (inputFile.exists()){
-                FileReader reader = new FileReader(inputFile);
+                FileReader reader = new FileReader(inputFile3);
                 BufferedReader bufferedReader = new BufferedReader(reader);
 
                 //reading the number of neurons from the input file
                 int neurons = Integer.parseInt(bufferedReader.readLine());
+
+                //initialising an array to store all the neurons
+                Neuron[] allNeurons = new Neuron[neurons];
+                //reading the name of the neurons
+                for (int i = 0; i < neurons; i++) {
+                    String neuronName = bufferedReader.readLine();
+                    Neuron neuron = new Neuron(neuronName);
+                    allNeurons[i] = neuron;
+                }
+
 
             }else{
                 inputFile.createNewFile();
