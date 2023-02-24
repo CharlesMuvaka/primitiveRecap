@@ -49,7 +49,7 @@ public class MindStoneNeighborNeurons {
             File inputFile3 = new File("mindstoneneighborneurons3.in");
 
             if (inputFile.exists()){
-                FileReader reader = new FileReader(inputFile1);
+                FileReader reader = new FileReader(inputFile);
                 BufferedReader bufferedReader = new BufferedReader(reader);
 
                 //reading the number of neurons from the input file
@@ -77,11 +77,13 @@ public class MindStoneNeighborNeurons {
                     }
                 }
 
+                //getting the mind stone vertex
+                Neuron mindStoneVertex = allNeurons[allNeurons.length - 1];
                 for (int i = 0; i < neurons; i++) {
                     for (int j = 0; j < allNeurons[i].neighbors.size(); j++) {
-                        System.out.print(allNeurons[i].name + ": "+ allNeurons[i].neighbors.get(j).name );
+//                        System.out.print(allNeurons[i].name + ": "+ allNeurons[i].neighbors.get(j).name );
                     }
-                    System.out.println(" ");
+//                    System.out.println(" ");
                 }
 
             }else{
