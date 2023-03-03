@@ -1,5 +1,7 @@
 package org.datastructures;
 
+import org.datastructures.models.AdjacencyMatrix;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
