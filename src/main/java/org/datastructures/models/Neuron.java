@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Neuron {
     public String name;
-    List<Neuron> neighbors = new ArrayList<>();
+    public List<Neuron> neighbors = new ArrayList<>();
 
     public Neuron(String neuronName){
         this.name = neuronName;
@@ -13,5 +13,10 @@ public class Neuron {
 
     public void addNeighbor(Neuron neuron){
         neighbors.add(neuron);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
