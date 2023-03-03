@@ -1,5 +1,7 @@
 package org.datastructures;
 
+import org.datastructures.models.AdjacencyMatrix;
+
 import java.io.*;
 
 /**
@@ -51,7 +53,7 @@ public class PredictThanosSnap {
             File inputFile3 = new File("predictthanossnap3.in");
 
             if (inputFile.exists()){
-                FileReader reader = new FileReader(inputFile);
+                FileReader reader = new FileReader(inputFile3);
                 BufferedReader bufferedReader = new BufferedReader(reader);
 
                 //Reading the seed from the input file
@@ -59,6 +61,11 @@ public class PredictThanosSnap {
 
                 //Reading the number of vertices from the graph
                 int vertices = Integer.parseInt(bufferedReader.readLine());
+
+                //initialising an adjacency matrix to store the graph edges
+                AdjacencyMatrix graph = new AdjacencyMatrix(vertices);
+
+
             }else{
                 inputFile.createNewFile();
                 inputFile1.createNewFile();
