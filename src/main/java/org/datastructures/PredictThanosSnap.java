@@ -57,7 +57,8 @@ public class PredictThanosSnap {
                 //Reading the seed from the input file
                 int seed = Integer.parseInt(bufferedReader.readLine());
 
-
+                //Reading the number of vertices from the graph
+                int vertices = Integer.parseInt(bufferedReader.readLine());
             }else{
                 inputFile.createNewFile();
                 inputFile1.createNewFile();
