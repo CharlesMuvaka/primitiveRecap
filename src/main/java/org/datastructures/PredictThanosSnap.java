@@ -65,7 +65,16 @@ public class PredictThanosSnap {
                 //initialising an adjacency matrix to store the graph edges
                 AdjacencyMatrix graph = new AdjacencyMatrix(vertices);
 
+                //Reading the edge relationships between the vertices
+                for (int i = 0; i < vertices; i++) {
+                    String[] edges = bufferedReader.readLine().split(" ");
+                    for (int j = 0; j < edges.length; j++) {
+                        graph.matrix[i][j] = Integer.parseInt(edges[j]);
+                        System.out.print(graph.matrix[i][j] + " ");
+                    }
+                    System.out.println(" ");
 
+                }
             }else{
                 inputFile.createNewFile();
                 inputFile1.createNewFile();
