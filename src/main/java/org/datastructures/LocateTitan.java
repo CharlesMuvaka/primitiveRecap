@@ -1,5 +1,7 @@
 package org.datastructures;
 
+import org.datastructures.models.AdjacencyMatrix;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -64,7 +66,7 @@ public class LocateTitan {
             File locateTitan1 = new File("locatetitan1.in");
             File locateTitan2 = new File("locatetitan2.in");
             File locateTitan3 = new File("locatetitan3.in");
-            if (locateTitan1.exists()){
+            if (locateTitan3.exists()){
                 // creating a file reader to read the bytes of the file
                 FileReader reader = new FileReader(locateTitan3);
                 // using a buffered reader to get the actual content
