@@ -45,6 +45,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UseTimeStone {
     public static void main(String[] args) {
@@ -68,6 +70,15 @@ public class UseTimeStone {
 
                 //reading the number of events (vertices in the graph)
                 int events = Integer.parseInt(bufferedReader.readLine());
+
+                //initialising a map to store an event and its expected eu value
+                Map<Integer, Integer > eventsAndEu = new HashMap<>();
+
+                //reading the (int) event number and (int) EU value
+                for (int i = 0; i < events; i++) {
+                    //creating a string array of the event and its eu
+                    String[] eventAndEu = bufferedReader.readLine().split(" ");
+                }
 
 
             }
