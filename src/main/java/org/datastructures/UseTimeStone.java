@@ -66,6 +66,9 @@ public class UseTimeStone {
                 //reading the expected utility (EU) threshold from the file.
                 int expectedEu = Integer.parseInt(bufferedReader.readLine());
 
+                //reading the number of events (vertices in the graph)
+                int events = Integer.parseInt(bufferedReader.readLine());
+
 
             }
         }catch (IOException ex) {
