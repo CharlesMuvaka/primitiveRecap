@@ -47,6 +47,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 public class UseTimeStone {
     public static void main(String[] args) {
@@ -81,8 +82,29 @@ public class UseTimeStone {
                     //storing the event and its expected eu in a map
                     eventsAndEu.put(Integer.parseInt(eventAndEu[0]),Integer.parseInt(eventAndEu[1]));
                 }
+                //initialising a graph instance to store its data
+                AdjacencyMatrix graph = new AdjacencyMatrix(events);
+
+                //reading the graph edges from the file
+                for (int i = 0; i < events; i++) {
+                    String edges = bufferedReader.readLine();
+                    for (int j = 0; j < edges.length(); j++) {
+                        if (!Character.isWhitespace(edges.charAt(j))){
+                            graph.matrix[i][j] = Character.getNumericValue(edges.charAt(j));
+                        }
+                    }
+                }
 
 
+
+
+
+
+            }else{
+                inputFile.createNewFile();
+                inputFile2.createNewFile();
+                inputFile1.createNewFile();
+                inputFile3.createNewFile();
             }
         }catch (IOException ex) {
             System.out.println(ex.getMessage());
