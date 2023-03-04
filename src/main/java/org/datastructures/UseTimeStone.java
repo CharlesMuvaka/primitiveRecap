@@ -78,6 +78,8 @@ public class UseTimeStone {
                 for (int i = 0; i < events; i++) {
                     //creating a string array of the event and its eu
                     String[] eventAndEu = bufferedReader.readLine().split(" ");
+                    //storing the event and its expected eu in a map
+                    eventsAndEu.put(Integer.parseInt(eventAndEu[0]),Integer.parseInt(eventAndEu[1]));
                 }
 
 
