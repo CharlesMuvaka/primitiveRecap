@@ -87,17 +87,32 @@ public class UseTimeStone {
 
                 //reading the graph edges from the file
                 for (int i = 0; i < events; i++) {
-                    String edges = bufferedReader.readLine();
-                    for (int j = 0; j < edges.length(); j++) {
-                        if (!Character.isWhitespace(edges.charAt(j))){
-                            graph.matrix[i][j] = Character.getNumericValue(edges.charAt(j));
+                    String[] edges = bufferedReader.readLine().split(" ");
+                    for (int j = 0; j < edges.length; j++) {
+                        graph.matrix[i][j] =Integer.parseInt(edges[j]);
+                    }
+                }
+                //initialising a variable to store the total number of timelines
+                int noOfTimelines = 0;
+
+                //initialising a stack to perform the depth first traversal
+                Stack<Integer> visitedEvents = new Stack<>();
+                visitedEvents.add(0);
+                noOfTimelines += visitedEvents.size();
+
+                for (int i = 0; i < events; i++) {
+                    while (visitedEvents.size() != 0){
+                        int currentVertex = visitedEvents.pop();
+                        for (int j = 0; j < graph.matrix[currentVertex].length; j++) {
+                            if (graph.matrix[currentVertex][j] == 1){
+                                visitedEvents.push(j);
+                                noOfTimelines++;
+                            }
                         }
                     }
                 }
 
-
-
-
+                System.out.println(noOfTimelines);
 
 
             }else{
