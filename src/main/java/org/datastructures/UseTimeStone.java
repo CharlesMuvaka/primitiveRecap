@@ -45,9 +45,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class UseTimeStone {
     public static void main(String[] args) {
@@ -100,19 +98,40 @@ public class UseTimeStone {
                 visitedEvents.add(0);
                 noOfTimelines += visitedEvents.size();
 
+                //initialising a map to store a timeline and its events
+                Map<Integer, List<Integer>> timelineAndEvents = new HashMap<>();
+
+                //initialising a list to store the timelines
+                List<Integer> timelinesEvents = new ArrayList<>();
+
                 for (int i = 0; i < events; i++) {
                     while (visitedEvents.size() != 0){
                         int currentVertex = visitedEvents.pop();
+                        timelinesEvents.add(currentVertex);
+                        List<Integer> test = new ArrayList<>();
+                        for (int j = 0; j < timelinesEvents.size(); j++) {
+                            test.add(timelinesEvents.get(j));
+                        }
+                        timelineAndEvents.put(i, test);
+
+
                         for (int j = 0; j < graph.matrix[currentVertex].length; j++) {
                             if (graph.matrix[currentVertex][j] == 1){
                                 visitedEvents.push(j);
+
                                 noOfTimelines++;
                             }
                         }
                     }
                 }
 
-                System.out.println(noOfTimelines);
+                for (int i = 0; i < timelineAndEvents.size(); i++) {
+//                    System.out.println(timelinesEvents.size());
+                    System.out.println(timelineAndEvents.get(i));
+
+                }
+
+                System.out.println(timelineAndEvents.size());
 
 
             }else{
