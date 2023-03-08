@@ -34,4 +34,20 @@
 - Uses a multidimensional array to represent the data.
 
             Traversing through a Graph.
+- There are two ways in traversing through a graph.
+        1. Using a breadth First Traversal
+        2. using a Depth first traversal.
 
+        Depth First Traversal(DFT)
+- You go deep following the same direction from a given node until no more nodes can be reached.
+- It uses a stack to store nodes while traversing.
+    NOTE: A stack uses a LIFO architecture. The last object to be inserted is the one that is removed first
+
+               O -> start node
+              / \
+             O   O
+            / \ / \
+           O   O   O
+
+           Steps
+- Add the start node to the stack
