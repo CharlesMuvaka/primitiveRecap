@@ -51,3 +51,44 @@
 
            Steps
 - Add the start node to the stack
+- Loop through the graph matrix or adjacency list.
+- Ensure that the stack is always not empty using a while loop.
+        NOTE: Currently the stack won't be empty since you already added the start node in the stack.
+- Pop a node out of the stack and make it your current node.
+- Loop through the matrix/list again and push the neighbors of the current node.
+    Example:
+        public void depthFirstTraversal(matrix, startNode){
+
+           //initialise a stack to store the nodes being traversed.
+           Stack<Integer> stack = new Stack<>()
+
+           //adding the start node
+           stack.add(startNode)
+
+           for(int i = 0; i < matrix.length; i++){
+                //check whether the start node exists in the matrix
+                if(i == startNode){
+                    //creating a breakpoint to end the traversal
+
+                    while(stack.size != 0){
+                        //getting the node to be traversed from the stack
+
+                        int currentNode = stack.pop()
+                        //printing the current node to the terminal
+
+                        System.out.println(currentNode)
+
+                        //looping through the current node neighbors
+                        for(int j = 0; j < matrix[currentNode].length; j++){
+                            //getting the neighbors of the current node
+                            if(matrix[currentNode][j] == 1){
+                                //pushing the neighbor to the stack.
+                                stack.push(j)
+                            }
+                        }
+                    }
+                }else{
+                    System.out.println("The node doesn't exist in the graph")
+                }
+           }
+        }
