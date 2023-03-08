@@ -19,7 +19,19 @@
         3. Connected and disconnected graphs - There is a relationship between one node and another in a connected graph
                                 while there isn't in a disconnected graph.
 
+          Real World Application of Graphs.
+- Targeted advertisements
+- Calculating distance between points.
+
+          Nodes/Vertex
+- A node is denoted by a circle and stores data.
+- usually denoted by (n).
+- For every node there can be a maximum of two(2) edges.
+
 - An adjacency matrix and an adjacency list are used to represent data in a graph.
 
             Adjacency Matrix
 - Uses a multidimensional array to represent the data.
+
+            Traversing through a Graph.
+
